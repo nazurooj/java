@@ -392,34 +392,53 @@ function task9_4() {
     }
 }
 
-//   function task9_5(){
-//     var a = prompt ("input 4"); 
-//     if (++a === 5)
-//     { alert("given condition for variable a is true"); }   
-//   }
-//   var b = prompt ("input 82");
-//    if (b++ === 83){
-//        alert("given condition for variable b is true"); }  
+function task9_5() {
+    var a = +prompt("input 4");
+    if (++a === 5) { alert("given condition for variable a is true"); }
 
-//        var c = 12; 
-//        if (c++ === 13){ alert("condition 1 is true"); } 
-//        if (c === 13){ alert("condition 2 is true"); } 
-//        if (++c < 14){ alert("condition 3 is true"); } 
-//        if(c === 14){ alert("condition 4 is true"); } 
+    var b = +prompt("input 82");
+    if (b++ === 83) {
+        alert("given condition for variable b is true");
+    }
 
-// // function task9_6(){
-// //     var first= +prompt("Insert your 1st Subject Marks")
-// //     var second= +prompt("Insert your 2nd Subject Marks")
-// //     var third= +prompt("Insert your 3rd Subject Marks")
-// //     var total= +prompt ("Insert total marks out of which you obtained")
-// //     var obtained= first + second + third;
-// //     var percent= obtained / total * 100;
-// //     var htmlValue="<h1>MARK SHEET</h1>" + "<br>" + "Total MArks :" + total + "<br>" + "Marks Obtained :" + obtained + "<br>" + "Percentage : " + percent + "%" )
+    var c = 12;
+    if (c++ === 13) { alert("condition 1 is true"); }
+    if (c === 13) { alert("condition 2 is true"); }
+    if (++c < 14) { alert("condition 3 is true"); }
+    if (c === 14) { alert("condition 4 is true"); }
+}
 
-// //     if ( percent >= 80){
-// //         document.write(htmlValue)
-// //     }
-// }
+function task9_6() {
+    var first = +prompt("Insert your 1st Subject Marks")
+    var second = +prompt("Insert your 2nd Subject Marks")
+    var third = +prompt("Insert your 3rd Subject Marks")
+    var total = +prompt("Insert total marks out of which you obtained")
+    var obtained = first + second + third;
+    var percent = obtained / total * 100;
+    var grade = "F";
+    var r = "Remarks: ";
+    if (percent >= 80) {
+        grade = "A+";
+        r = "Excellent";
+    }
+    else if (percent >= 70) {
+        grade = "B";
+        r = "Good";
+    }
+    else if (percent >= 60) {
+        grade = "C";
+        r = "You Need To Improve";
+    }
+    else if (percent < 60) {
+        grade = "Fail";
+        r = "Sorry";
+    }
+    console.log(percent)
+    document.write("<h1>MARK SHEET</h1>" + "<br>" + "Total MArks :" + total + "<br>" + "Marks Obtained :" + obtained + "<br>" + "Percentage : "
+        + percent + "%" + "<br>" + "Grade" + grade + "<br>" + "Remarks" + r)
+
+}
+
 function task9_7() {
     var num = 5;
     var guess = +prompt("Guess the secret number")
@@ -450,21 +469,271 @@ function task9_9() {
     }
 }
 function task9_10() {
- var t= +prompt ("Temprature")
- if ( t > 40){
-     alert ("It is too hot outside")
- }
- if ( t > 30){
-    alert ("The Weather today is Normal.")
-}
-if ( t > 20){
-    alert ("Today’s Weather is cool.")
-}
-if ( t > 10){
-    alert ("OMG! Today’s weather is so Cool.")
+    var t = +prompt("Temprature")
+    if (t > 40) {
+        alert("It is too hot outside")
+    }
+    else if (t > 30) {
+        alert("The Weather today is Normal.")
+    }
+    else if (t > 20) {
+        alert("Today’s Weather is cool.")
+    }
+    else if (t > 10) {
+        alert("OMG! Today’s weather is so Cool.")
+    }
 }
 
-}
 function task9_11() {
+    var a = +prompt("First number")
+    var sign = prompt("operator")
+    var b = +prompt("Second number")
+
+    var result;
+
+    if (sign == "+") {
+        result = a + b
+    }
+    else if (sign == "-") {
+        result = a - b
+    }
+    else if (sign == "*") {
+        result = a * b
+    }
+    else if (sign == "/") {
+        result = a / b
+    }
+    else if (sign == "%") {
+        result = a / b * 100
+    }
+    document.write(result)
+}
+// function task12_1(){
+// var text= prompt ("insert number")
+// if(typeof text == 'number'){
+// 	document.write(text + " is a number <br/>");
+//  }
+//  else if  (typeof text == "string")
+// 	document.write(text + " is a string <br/>");
+// }
+function task12_2() {
+    var num1 = +prompt("insert value")
+    var num2 = +prompt("insert 2nd value")
+    if (num1 > num2) {
+        show = num1
+    }
+    else if (num2 > num1) {
+        show = num2
+    }
+    else if (num1 === num2) {
+        show = num1 + "  " + num2
+    }
+    document.write(show)
+}
+
+function task12_3() {
+    var num = +prompt("insert value")
+    if (num > 0) {
+        show = (num + " is positive number")
+    }
+    else if (num < 0) {
+        show = (num + " is negative number")
+    }
+
+    else {
+        show = (num + " is Zero")
+    }
+    document.write(show)
+}
+function task12_4() {
+    var input = prompt("insert letter")
+    var letter = input.toLowerCase()
+    if ((letter === "a") || (letter === "e") || (letter === "i") || (letter === "o") || (letter === "u")) {
+        show = (letter + " is a vowel")
+    }
+    else {
+        show = (letter + " is not a vowel")
+    }
+    document.write(show)
+}
+function task12_5() {
+    var pwd = ("firebase")
+    var a = prompt("insert your password")
+    if (a === "") {
+        alert(" Please enter your password")
+    }
+    else if (a != pwd) {
+        alert("Incorrect password")
+    }
+    else {
+        alert("Correct! The password you entered matches the original password")
+    }
+}
+function task12_6() {
+    var greeting;
+    var hour = 13;
+    if (hour < 18) { greeting = "Good day"; }
+    else { greeting = "Good evening"; }
+    document.write(greeting)
+}
+function task12_7() {
+    var time = +prompt("input time 24 hours format like: 1200")
+    if ((time > 0000) & (time < 1200)) {
+        alert("Good Morning! ")
+    }
+    else if ((time >= 1200) & (time < 1700)) {
+        alert("Good afternoon! ")
+    }
+    else if ((time >= 1700) & (time < 2100)) {
+        alert("Good Evening! ")
+    }
+    else {
+        alert("Good Night! ")
+    }
+}
+function task13_1() {
+    var name = [];
+}
+function task13_2() {
+    var myArray = new Array();
+}
+function task13_3() {
+    var city = ["Atlanta"]
+    document.write(city)
+}
+function task13_4() {
+    var points = [12, 50, 45]
+    document.write(points)
+}
+function task13_5() {
+    var yes = [true]
+    document.write(yes)
+}
+function task13_6() {
+    var mixed = [true, 23, "hi"]
+    document.write(mixed)
+}
+function task13_7() {
+    var qual = ["SSC", "HSC", "BCS", "BS", "BCOM", "MS", "M. Phil.", "PhD"]
+    document.write("<h1> Qualifications: <br></h1>")
+    for (var i = 0; i < qual.length - 1; i++) {
+        var a = qual[i]
+        document.write(i + 1 + ". " + a + "<br>")
+    }
+}
+function task13_8() {
+    var names = ["Michael", "john", "Tony"]
+    var scores = [320, 230, 480]
+    var percent = [320 / 500 * 100, 230 / 500 * 100, 480 / 500 * 500]
+    for (var i = 0; i < names.length; i++) {
+        document.write("The score of " + names[i] + "is" + scores[i] + "Percentage" + percent[i] + "% <br>");
+    }
+}
+function task13_9() {
+    var colors = ["Pink", "Violet", "Blue", "Yellow"]
+    document.write(colors)
+    var input;
+    setTimeout(function () {
+        input = prompt("Add color name to the beginning")
+        if (input != null) {
+            colors.unshift(input);
+            document.write("<br>" + colors);
+        }
+        input_2 = prompt("Add color name to the end")
+        if (input_2 != null) {
+            colors.push(input_2);
+            document.write("<br>" + colors);
+        }
+        input_3 = prompt("Add two more color name to the begin")
+        if (input_3 != null) {
+            colors.unshift(input_3);
+            document.write("<br>" + colors);
+        }
+        input_4 = prompt("dlete 1st color")
+        if (input_4 != null) {
+            colors.shift(input_4);
+            document.write("<br>" + colors);
+        }
+        input_5 = prompt("dlete last color")
+        if (input_5 != null) {
+            colors.pop(input_5);
+            document.write("<br>" + colors);
+        }
+    }, 1000);
 
 }
+function task13_10() {
+    var scores = [320, 220, 480, 120]
+    document.write(scores + "<br>")
+    scores.sort();
+    document.write(scores)
+}
+function task13_11() {
+    var cities = ["Karachi", "Lahore", "Islamabad", "Multan"]
+    document.write(cities + "<br>")
+    var city = cities.slice(0, 3);
+    document.write(city)
+}
+
+function task13_12() {
+    var arr = ["my", " name", "is", "naz"]
+    document.write(arr.join(' '));
+}
+function task13_13() {
+    var arr = ["Maria", " Nadia", "Faiza", "Sam"]
+    document.write(arr + "<br>");
+    arr.shift()
+    document.write(arr + "<br>")
+    arr.shift()
+    document.write(arr + "<br>")
+    arr.shift()
+    document.write(arr + "<br>")
+}
+function task13_14() {
+    var arr = ["Maria", " Nadia", "Faiza", "Sam"]
+    document.write(arr + "<br>");
+    arr.pop()
+    document.write(arr + "<br>")
+    arr.pop()
+    document.write(arr + "<br>")
+    arr.pop()
+    document.write(arr + "<br>")
+}
+function task13_15() {
+    var phones = ["Apple", "Samsung", "Motorola", "Nokia", "Sony", "Haier"]
+    document.write("<select>")
+    for (var i = 0; i <= phones.length - 1; i++) {
+        document.write("<option>" + phones[i] + "</option>");
+    }
+    document.write("</select>")
+}
+
+
+function task14_1() {
+    var arr = [];
+}
+function task14_2() {
+    var matrix = [
+        [0, 1, 2, 3],
+        [1, 0, 1, 2],
+        [2, 1, 0, 1]
+    ];
+    document.write(matrix);
+}
+function task14_3() {
+    for (var i = 1; i < 11; i++) {
+        document.write(i + "<br>");
+    }
+}
+
+function task14_4() {
+
+    var input = +prompt(" insert a number to display the table")
+    var length = +prompt("insert length of table")
+
+    for (var i = 1; i <= length; i+length);
+     { document.write(input + "x" + i + "=" + (i * input)) }
+}
+
+
+
